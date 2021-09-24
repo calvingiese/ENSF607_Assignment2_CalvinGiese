@@ -49,6 +49,7 @@ public class Game implements Constants {
 		Referee theRef;
 		Player xPlayer, oPlayer;
 		BufferedReader stdin;
+		int playOnce = 0;
 		Game theGame = new Game();
 		stdin = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("\nPlease enter the name of the \'X\' player: ");
@@ -63,6 +64,7 @@ public class Game implements Constants {
 		
 		System.out.print("\nPlease enter the name of the \'O\' player: ");
 		name = stdin.readLine();
+		System.out.println('\n');
 		while (name == null) {
 			System.out.print("Please try again: ");
 			name = stdin.readLine();
@@ -77,6 +79,8 @@ public class Game implements Constants {
 		theRef.setxPlayer(xPlayer);
         
         theGame.appointReferee(theRef);
+        
+        theRef.runTheGame();
 	}
 	
 
